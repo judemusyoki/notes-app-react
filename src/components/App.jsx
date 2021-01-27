@@ -43,5 +43,3 @@ const App = () => {
 };
 
 export default App;
-
-// If the only one item being returend then no need for return inside map
