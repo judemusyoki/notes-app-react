@@ -6,19 +6,11 @@ import Footer from './Footer';
 import Note from './Note';
 import CreateArea from './CreateArea';
 
-// import notes from '../notes';
-
 const App = () => {
   const intialState = [];
-
-  // const [notes, setNotes] = useState(intialState);
-  // const localNotes = windowGlobal.localstorage.getItem('notes');
-
   const [notes, setNotes] = useLocalStorage('localNotes', [intialState]);
-  // console.log(notes);
 
   const addNote = (newNote) => {
-    // localStorage.setItem('notes', JSON.stringify(newNote));
     setNotes((prevNotes) => {
       return [...prevNotes, newNote];
     });
