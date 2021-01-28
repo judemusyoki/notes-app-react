@@ -41,6 +41,7 @@ function CreateArea(props) {
       <form className='create-note'>
         {isExpanded && (
           <input
+            autoFocus
             name='title'
             onChange={handleChange}
             placeholder='Title'

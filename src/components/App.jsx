@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useLocalStorage from './useLocalStorage';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -8,9 +9,16 @@ import CreateArea from './CreateArea';
 // import notes from '../notes';
 
 const App = () => {
-  const [notes, setNotes] = useState([]);
+  const intialState = [];
+
+  // const [notes, setNotes] = useState(intialState);
+  // const localNotes = windowGlobal.localstorage.getItem('notes');
+
+  const [notes, setNotes] = useLocalStorage('localNotes', [intialState]);
+  // console.log(notes);
 
   const addNote = (newNote) => {
+    // localStorage.setItem('notes', JSON.stringify(newNote));
     setNotes((prevNotes) => {
       return [...prevNotes, newNote];
     });
